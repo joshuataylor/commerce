@@ -35,19 +35,19 @@ commerce_price.commerce_number_format.*:
       label: 'Name'
       translatable: true
     numberingSystem:
-      type: array
+      type: string
       label: 'Numbering System'
     decimalSeparator:
-      type: array
+      type: string
       label: 'Decimal Separator'
     plusSign:
-      type: array
+      type: string
       label: 'Plus sign'
     minusSign:
-      type: array
+      type: string
       label: 'Minus sign'
     percentSign:
-      type: array
+      type: string
       label: 'Percent sign'
     decimalPattern:
       type: string
@@ -62,7 +62,7 @@ commerce_price.commerce_number_format.*:
       type: string
       label: 'Accounting currency pattern'
     groupingSeparator:
-      type: array
+      type: string
       label: 'Grouping Separator'
     status:
       label: Status
