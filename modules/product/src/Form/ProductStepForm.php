@@ -13,7 +13,10 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Form controller for the product edit form.
  */
-class ProductForm extends ContentEntityForm {
+class ProductStepForm extends ContentEntityForm {
+
+  protected $step = 1;
+
   /**
    * {@inheritdoc}
    *
@@ -41,7 +44,7 @@ class ProductForm extends ContentEntityForm {
     $currentUser = $this->currentUser();
 
     $form = parent::form($form, $form_state);
-    if (!$product->getStore()) {
+    if ($this->step === 1) {
       $form['step'] = [
         '#type' => 'hidden',
         '#default_value' => $this->step
