@@ -17,15 +17,30 @@ entity.commerce_product.add_page:
   requirements:
     _permission: 'administer products'
 
-entity.commerce_product.add_form:
+entity.commerce_product.add_form_step_1:
   path: '/admin/commerce/products/add/{commerce_product_type}'
   defaults:
-    _controller: '\Drupal\commerce\Controller\AddController::addForm'
-    _title_callback: '\Drupal\commerce\Controller\AddController::addFormTitle'
+    _controller: '\Drupal\commerce_product\Controller\ProductController::addForm'
+    _title_callback: '\Drupal\commerce_product\Controller\ProductController::addFormTitle'
   options:
     parameters:
       commerce_product_type:
         type: entity:commerce_product_type
+        with_config_overrides: TRUE
+  requirements:
+    _entity_create_access: 'commerce_product'
+
+entity.commerce_product.add_form_step_2:
+  path: '/admin/commerce/products/add/{commerce_product_type}/{commerce_store}'
+  defaults:
+    _controller: '\Drupal\commerce_product\Controller\ProductController::addForm'
+  options:
+    parameters:
+      commerce_product_type:
+        type: entity:commerce_product_type
+        with_config_overrides: TRUE
+      commerce_store:
+        type: entity:commerce_store
         with_config_overrides: TRUE
   requirements:
     _entity_create_access: 'commerce_product'
@@ -97,3 +112,11 @@ entity.commerce_product_type.delete_form:
     _title: 'Delete a product type'
   requirements:
     _entity_access: 'commerce_product_type.delete'
+commerce_product.product_multistep_form:
+  path: '/admin/config/commerce_product/productmultistep'
+  defaults:
+    _form: '\Drupal\commerce_product\Form\ProductMultistepForm'
+    _title: 'ProductMultistepForm'
+  requirements:
+    _permission: 'access administration pages'
+
