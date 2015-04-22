@@ -28,6 +28,8 @@ class PriceSimpleWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+    $product = $items->getParent();
+    xdebug_break();
     // Get the enabled currencies.
     $enabledCurrencies = entity_load_multiple_by_properties('commerce_currency', ['status' => 1]);
     $currency_codes = array_keys($enabledCurrencies);

@@ -58,9 +58,11 @@ class ProductController extends ControllerBase {
       ->getDefinition($entityType)
       ->getKey('bundle');
     $product = $this->entityManager()->getStorage($entityType)->create(
-      [$bundleKey => $bundle->id(),]
+      [$bundleKey => $bundle->id()]
     );
-    $product->setStore($routeMatch->getParameters()->get('commerce_product_type'));
+    if ($routeMatch->getParameters()->get('commerce_store')) {
+      $product->setStoreId($routeMatch->getParameters()->get('commerce_store'));
+    }
     return $this->entityFormBuilder()->getForm($product, 'add');
   }
 

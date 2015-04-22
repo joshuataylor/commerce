@@ -17,7 +17,7 @@ entity.commerce_product.add_page:
   requirements:
     _permission: 'administer products'
 
-entity.commerce_product.add_form_step_1:
+entity.commerce_product.add_form:
   path: '/admin/commerce/products/add/{commerce_product_type}'
   defaults:
     _controller: '\Drupal\commerce_product\Controller\ProductController::addForm'
