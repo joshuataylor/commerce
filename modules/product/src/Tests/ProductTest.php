@@ -34,7 +34,8 @@ class ProductTest extends CommerceProductTestBase {
     $values = [
       'sku' => $this->randomMachineName(),
       'title' => $this->randomMachineName(),
-      'type' => 'product'
+      'type' => 'product',
+      'store_id' => $this->commerce_store->id()
     ];
     $this->createEntity('commerce_product', $values);
 
