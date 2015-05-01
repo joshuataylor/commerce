@@ -20,7 +20,7 @@ abstract class CommerceOrderTestBase extends WebTestBase {
    *
    * @var array
    */
-  public static $modules = array('commerce', 'commerce_order');
+  public static $modules = ['commerce', 'commerce_order', 'inline_entity_form'];
 
   /**
    * User with permission to administer products.

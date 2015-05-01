@@ -23,6 +23,14 @@ commerce_price.commerce_currency.*:
       label: Status
       type: boolean
 
+field.formatter.settings.price:
+  type: mapping
+  label: 'Price format settings'
+  mapping:
+    show_currency_code:
+      type: boolean
+      label: 'Show currency code'
+
 commerce_price.commerce_number_format.*:
   type: config_entity
   label: 'Number Format'

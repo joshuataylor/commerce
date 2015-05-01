@@ -1,12 +1,9 @@
+uuid: ccf081c2-4485-4a34-a400-ca9e9fd7c84a
 langcode: en
 status: true
 dependencies:
-  entity:
+  config:
     - commerce_order.commerce_order_type.order
-id: commerce_order.order.default
-targetEntityType: commerce_order
-bundle: order
-mode: default
 content:
   created:
     type: datetime_timestamp
@@ -30,6 +27,11 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  store_id:
+    type: options_select
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 2
@@ -38,7 +40,3 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  hostname: true
-  order_number: true
-  status: true

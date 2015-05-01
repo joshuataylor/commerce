@@ -11,3 +11,11 @@ commerce_order.commerce_order_type.*:
     description:
       type: text
       label: 'Description'
+
+content.*.settings:
+  type: mapping
+  label: 'Inline Entity Form settings'
+  mapping:
+    match_operator:
+      type: string
+      label: 'Match Operator'
