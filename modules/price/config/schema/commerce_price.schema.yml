@@ -22,3 +22,11 @@ commerce_price.commerce_currency.*:
     status:
       label: Status
       type: boolean
+
+field.formatter.settings.price_default:
+  type: mapping
+  label: 'Price format settings'
+  mapping:
+    show_currency_code:
+      type: boolean
+      label: 'Show currency code'
