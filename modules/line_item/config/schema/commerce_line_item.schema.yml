@@ -11,3 +11,11 @@ commerce_line_item.commerce_line_item_type.*:
     description:
       type: text
       label: 'Description'
+
+content.line_items.settings:
+  type: config_entity
+  label: 'Line item type'
+  mapping:
+    allow_existing:
+      type: boolean
+      label: 'allow_existing'
