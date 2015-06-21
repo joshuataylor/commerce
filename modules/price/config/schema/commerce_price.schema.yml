@@ -23,7 +23,7 @@ commerce_price.commerce_currency.*:
       label: Status
       type: boolean
 
-field.formatter.settings.price:
+field.formatter.settings.price_default:
   type: mapping
   label: 'Price format settings'
   mapping:
